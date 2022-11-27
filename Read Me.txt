@@ -1,0 +1,4 @@
+#### This is a follow-up task on Due Dilligenc-1. I am to update all the viz-me slides with the new data, the last time I used to download the entire transactional data from the metabase on a google sheet then download it and upload it as excel, then use it to answer the questions.<br>
+#### I think I am going to approach it differently by using Jupyter instead of colab, and metabase to update the slides of the presentation 
+#### I started this off on a colab notebook but I am downloading it now as an .ipynb file and moving from there, the folder on my work google drive will include the googlesheets I will use as a container for the metabase questions then use the querried data on the visme presentation
+#### Bismillah!  
