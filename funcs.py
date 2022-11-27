@@ -38,3 +38,30 @@ def driver_status(data,m):
                 else:
                     status.append("active")
     return status
+
+    ### Needed functions
+def get_col_name(row):    
+    b = (df2.index[row.name] == row['value'])
+    return b.index[b.argmax()]
+
+def maxer(df,s=0,e=12):
+    max_index = []
+    for i in df.index.values:
+      max_index.append(df.iloc[:,s:e].loc[str(i)].idxmax())
+    return pd.Series(max_index, name = "max_month", index=df.index)
+
+def maxer_2(df,s=0,e=12):
+    max_index = []
+    for i in df.index.values:
+      max_index.append(df.iloc[:,s:e].iloc[i].idxmax())
+    return pd.Series(max_index, name = "max_month", index=df.index)
+def check_truck(val):
+          val =  val.lower().replace('_'," ").replace("-"," ").split()
+          if "jumbo" in val:
+            return "jumbo"
+          elif "dababa" in val:
+            return "dababa"
+          elif ("trella" in val)|("side" in val):
+            return "trailer"
+          elif "van" in val:
+            return "van"
