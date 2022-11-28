@@ -2,3 +2,4 @@
 #### I think I am going to approach it differently by using Jupyter instead of colab, and metabase to update the slides of the presentation 
 #### I started this off on a colab notebook but I am downloading it now as an .ipynb file and moving from there, the folder on my work google drive will include the googlesheets I will use as a container for the metabase questions then use the querried data on the visme presentation
 #### Bismillah!  
+#### Documentation is in the notebook, first slides data are from the ILLA OVERVIEW dashboards

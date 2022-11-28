@@ -65,9 +65,30 @@ def check_truck(val):
             return "trailer"
           elif "van" in val:
             return "van"
-def retailer(val):
-    val =  val.lower().replace('_'," ").replace("-"," ").replace('/'," ").split()
-    if "تجزئة" in val:
-        return "retail"
-    else:
-        return "non_retail"   
+ def money(val):
+   if "dababa" in val:
+    return 150
+   elif "jumbo" in val:
+    return 200
+   elif ("trailer" in val)|("side" in val):
+    return 350
+   elif "van" in val:
+     return 150 
+def create_p(df,col,start,*args):
+  p = []
+  if start !=None:
+    bins=[start]
+  else:
+    bins=[]
+  cols= []
+  c=0
+  for i in list(args):
+    p.append((c,"{}%".format(i) ,np.percentile(df[col], i)))
+    bins.append(np.percentile(df[col], i))
+    cols.append(np.percentile(df[col], i))
+    c+=1
+  p.append((c,"max", df[col].max()))
+  bins.append(df[col].max())  
+  cols.append(df[col].max())  
+  print(p)
+  return bins,cols
