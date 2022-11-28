@@ -65,3 +65,9 @@ def check_truck(val):
             return "trailer"
           elif "van" in val:
             return "van"
+def retailer(val):
+    val =  val.lower().replace('_'," ").replace("-"," ").replace('/'," ").split()
+    if "تجزئة" in val:
+        return "retail"
+    else:
+        return "non_retail"   
