@@ -55,6 +55,30 @@ def maxer_2(df,s=0,e=12):
     for i in df.index.values:
       max_index.append(df.iloc[:,s:e].iloc[i].idxmax())
     return pd.Series(max_index, name = "max_month", index=df.index)
+### Needed functions
+def maxer_m(df):
+    max_index = []
+    for i in df_combo.select_dtypes(include=["float"]).columns:
+        max_index.append(df_combo[str(i)].idxmax())
+    return pd.Series(max_index, name = "max_index")
+def create_p(df,col,start,*args):
+      p = []
+      if start !=None:
+        bins=[start]
+      else:
+        bins=[]
+      cols= []
+      c=0
+      for i in list(args):
+        p.append((c,"{}%".format(i) ,np.percentile(df[col], i)))
+        bins.append(np.percentile(df[col], i))
+        cols.append(np.percentile(df[col], i))
+        c+=1
+      p.append((c,"max", df[col].max()))
+      bins.append(df[col].max())  
+      cols.append(df[col].max())  
+      print(p)
+      return bins,cols
 def check_truck(val):
           val =  val.lower().replace('_'," ").replace("-"," ").split()
           if "jumbo" in val:
