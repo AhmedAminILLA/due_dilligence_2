@@ -89,15 +89,15 @@ def check_truck(val):
             return "trailer"
           elif "van" in val:
             return "van"
- def money(val):
-   if "dababa" in val:
-    return 150
-   elif "jumbo" in val:
-    return 200
-   elif ("trailer" in val)|("side" in val):
-    return 350
-   elif "van" in val:
-     return 150 
+def money(val):
+       if "dababa" in val:
+        return 150
+       elif "jumbo" in val:
+        return 200
+       elif ("trailer" in val)|("side" in val):
+        return 350
+       elif "van" in val:
+         return 150 
 def create_p(df,col,start,*args):
   p = []
   if start !=None:
